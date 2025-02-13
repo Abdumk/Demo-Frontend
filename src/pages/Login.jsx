@@ -20,7 +20,7 @@ function Login() {
     // Check if the data is being captured correctly
     console.log(loginData);
     // Send the data to the server
-    const apiUrl = 'http://44.211.174.118:4000/login';
+    const apiUrl = 'http://localhost:4000/login';
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -33,9 +33,9 @@ function Login() {
         setResponseMessage(data.message)
         if (data.status === "success") {
           // Redirect the user to the home page after 5 seconds 
-          // setTimeout(() => {
-          //   window.location.href = "/";
-          // }, 5000);
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 5000);
         }
       })
       .catch(error => console.log(error));
